@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+		body{
+			background-color: lightslategrey;
+			background-repeat: no-repeat;
+			background-position: right; bottom;
+			background-attachment: fixed;
+			padding: 15px;
+		}
+
+		div{
+			width: 400px;
+			margin: auto;
+		
+			background-color: silver;
+			align-items: center;
+		}
+	</style>
+<?php
+$servername="localhost";
+$username="system";
+$password="wanja1";
+
+//create connection
+$conn =
+mysqli_connect(localhost,system,wanja1);
+//check connection
+if(!$conn){
+	die("connection failed: " .
+	mysqli_connect_error));
+	} 
+//create database
+$sql ="CREATE DATABASE myDB"
+if (mysqli_query($conn, $sql));
+{
+	echo "Database created successfully";
+}else{
+	echo "Error creating database: ". mysqli_error($conn); 
+}
+mysqli_close($conn);
+?>
+
+
+
+</head>
+<body>
+	<form action="action_page.php">
+		<div class="container">
+			<h1>CREATE ACCOUNT</h1>
+			<p style="color: black; font-family:cooper black; text-align: left;">Please fill in this form to create an account</p>
+
+			<hr>
+			<label for="Name">
+				<b>Name</b>
+				<br>
+			<input type="text" placeholder="Enter name" name="Name" required>
+			</label>
+<br>
+			<label for="email">
+				<b>Email</b>
+				<br>
+			<input type="text" placeholder="Enter Email" name="email" required>
+
+			
+			</label>
+			<br>
+			
+			<label for="email">
+				<b>Password</b>
+				<br>
+			<input type="password" placeholder="password" name="password" required>
+<br>
+		<br>
+		
+
+			<button type="submit" class="registration">Create Account</button>
+		</div>
+		<br>
+
+		<div class="container signin">
+			<p style="color: black; font-family:cooper black; text-align: left;">Already have an account?</p>
+			<br>
+				<a href="womenfashion.asp"><u>Sign in</u></a>
+			
+		</div>
+	</form>
+</body>
+</html>
